@@ -1,0 +1,44 @@
+{
+  "name": "vdom-fun",
+  "version": "0.0.0",
+  "description": "My awesome module",
+  "license": "MIT",
+  "repository": "laat/vdom-fun",
+  "author": {
+    "name": "Sigurd Fosseng",
+    "email": "sigurd@fosseng.net",
+    "url": "https://github.com/laat"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "prebuild": "mkdir -p lib",
+    "build:js": "browserify -d src/main.js -o lib/bundle.js",
+    "build": "npm run build:js",
+    "watch:js": "watchify -d src/main.js -o lib/bundle.js",
+    "prepublish": "npm run build",
+    "start": "http-server"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "laat"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "http-server": "^0.9.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}

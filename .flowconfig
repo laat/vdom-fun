@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[libs]
+flow/
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$IgnoreFlow
+unsafe.enable_getters_and_setters=true
